@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Paddle
 {
     private Vector3 pos;
 
@@ -12,12 +12,14 @@ public class Player : MonoBehaviour
         pos = this.transform.position;
     }
 
-    public void GoUp(float speed)
+    //Adds the speed to the y position 
+    public override void GoUp(float speed)
     {
         pos.y += speed;
     }
 
-    public void GoDown(float speed)
+    //Subtracts the speed from the y position
+    public override void GoDown(float speed)
     {
         pos.y -= speed;
     }

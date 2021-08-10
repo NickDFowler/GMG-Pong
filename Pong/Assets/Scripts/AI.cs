@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AI : MonoBehaviour
+public class AI : Paddle
 {
     private Vector3 pos;
     private bool direction;
@@ -13,17 +13,19 @@ public class AI : MonoBehaviour
         direction = true;
     }
 
-    void GoUp(float speed)
+    //AI moves at half speed
+    public override void GoUp(float speed)
     {
-        pos.y += speed;
+        pos.y += speed / 2;
     }
 
-    void GoDown(float speed)
+    public override void GoDown(float speed)
     {
-        pos.y -= speed;
+        pos.y -= speed / 2;
     }
 
-    public void UpdatePosition(float speed)
+    //Goes up until it reaches the top, then goes down until it reaches the bottom
+    public override void UpdatePosition(float speed)
     {
         if (direction)
         {
