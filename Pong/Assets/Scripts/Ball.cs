@@ -47,7 +47,7 @@ public class Ball : MonoBehaviour
         Invoke("BallStart", 1);
     }
     
-    //Detects when the ball collides with other objects. Top wall and paddles bounce the ball, goal scores
+    //Detects when the ball collides with other objects. Top wall and paddles bounce the ball, goal scores. Ball speeds up when it hits a paddle.
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Wall"))
